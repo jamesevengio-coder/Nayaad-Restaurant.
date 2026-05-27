@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Nayaad Restaurant | Best Shawarma &amp; Grill - Hams Tower, Kampala Road
+    </title>
+    <style>
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: &#39;Segoe UI&#39;, Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fef9f0;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #8B0000 0%, #c0392b 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .location-tag {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #2c2c2c;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            background: #8B0000;
+            border-radius: 5px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(&#39;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&#39;);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge {
+            background: #8B0000;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #8B0000;
+            margin: 2rem 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #8B0000;
+            display: inline-block;
+            width: auto;
+        }
+
+        .title-wrapper {
+            text-align: center;
+        }
+
+        /* Menu Grid */
+        .menu-category {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: #c0392b;
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+            border-left: 5px solid #c0392b;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .menu-item {
+            background: #fef9f0;
+            padding: 1rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-item-info h3 {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .menu-item-info p {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 0.25rem;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #2c7a2c;
+            font-size: 1.1rem;
+        }
+
+        /* Location Highlight Box */
+        .location-highlight {
+            background: linear-gradient(135deg, #1a472a 0%, #2c5e3a 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .location-highlight h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-highlight .address {
+            font-size: 1.3rem;
+            margin: 1rem 0;
+        }
+
+        .location-highlight .landmark {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-top: 0.5rem;
+        }
+
+        .map-link {
+            background: #f4a261;
+            color: #1a1a1a;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #2c2c2c;
+            color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .phone-numbers {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .phone-numbers a {
+            color: #f4a261;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 1rem 0;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+
+        /* Hours &amp; Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .info-card h4 {
+            font-size: 1.3rem;
+            color: #8B0000;
+            margin-bottom: 1rem;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            padding: 0.25rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #aaa;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav {
+                gap: 0.5rem;
+            }
+            .nav a {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.5rem;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            .phone-numbers {
+                font-size: 1.1rem;
+            }
+            .location-highlight .address {
+                font-size: 1rem;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        🌙 NAYAAD RESTAURANT
+      </h1>
+      <p>
+        Authentic Flavors • Fresh Ingredients • Best Shawarma in Town
+      </p>
+      <div class="location-tag">
+        📍 Hams Tower Mall, Kampala Road
+      </div>
+    </div>
+    <div class="nav">
+      <a href="#">      Home
+</a>
+      <a href="#mains">      Main Dishes
+</a>
+      <a href="#fast">      Fast &amp; Casual
+</a>
+      <a href="#light">      Light Meals
+</a>
+      <a href="#street">      Street &amp; Wraps
+</a>
+      <a href="#sides">      Sides
+</a>
+      <a href="#desserts">      Desserts
+</a>
+      <a href="#drinks">      Drinks
+</a>
+      <a href="#contact">      Contact
+</a>
+    </div>
+    <div class="container">
+      <div class="hero">
+        <h2>
+          Hungry? We&#39;ve Got You! 🍔🌯🍕
+        </h2>
+        <p>
+          Dine in • Takeaway • Delivery
+        </p>
+        <div class="hero-badge">
+          ⭐ Best Shawarma in Kampala ⭐
+        </div>
+      </div>
+      <!-- LOCATION HIGHLIGHT - NEW -->
+      <div class="location-highlight">
+        <h3>
+          📍 We Are Here!
+        </h3>
+        <div class="address">
+          <strong>          Hams Tower Mall, Kampala Road
+</strong>
+          <br />
+          Opposite Bank of Uganda • Next to Capital Shoppers
+        </div>
+        <div class="landmark">
+          🏛️ Landmark: Near the Grand Mosque / Taxi Park
+        </div>
+        <a href="https://maps.google.com/?q=Hams+Tower+Mall+Kampala+Road+Uganda" class="map-link" target="_blank">        🗺️ Open in Google Maps
+</a>
+      </div>
+      <!-- MAIN DISHES -->
+      <div class="title-wrapper">
+        <h2 class="section-title" id="mains">
+          🍔 Main Dishes
+        </h2>
+      </div>
+      <div class="menu-category">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Grilled Chicken Breast
+              </h3>
+              <p>
+                served with vegetables or fries
+              </p>
+            </div>
+            <div class="price">
+              25,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Beef Burger
+              </h3>
+              <p>
+                juicy patty with cheese, lettuce, and tomato
+              </p>
+            </div>
+            <div class="price">
+              20,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Spaghetti Bolognese
+              </h3>
+              <p>
+                pasta with rich meat sauce
+              </p>
+            </div>
+            <div class="price">
+              22,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Fried Fish &amp; Chips
+              </h3>
+              <p>
+                crispy fish with golden fries
+              </p>
+            </div>
+            <div class="price">
+              28,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Chicken Alfredo Pasta
+              </h3>
+              <p>
+                creamy white sauce with tender chicken
+              </p>
+            </div>
+            <div class="price">
+              25,000 UGX
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FAST & CASUAL -->
+      <div class="title-wrapper">
+        <h2 class="section-title" id="fast">
+          🍕 Fast &amp; Casual
+        </h2>
+      </div>
+      <div class="menu-category">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Pepperoni Pizza
+              </h3>
+            </div>
+            <div class="price">
+              30,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Chicken Wrap
+              </h3>
+            </div>
+            <div class="price">
+              15,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Club Sandwich
+              </h3>
+            </div>
+            <div class="price">
+              18,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                BBQ Chicken Wings
+              </h3>
+            </div>
+            <div class="price">
+              22,000 UGX
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- LIGHT MEALS -->
+      <div class="title-wrapper">
+        <h2 class="section-title" id="light">
+          🥗 Light Meals
+        </h2>
+      </div>
+      <div class="menu-category">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Caesar Salad
+              </h3>
+            </div>
+            <div class="price">
+              15,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Greek Salad
+              </h3>
+            </div>
+            <div class="price">
+              15,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Avocado Toast
+              </h3>
+            </div>
+            <div class="price">
+              12,000 UGX
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- STREET & WRAPS -->
+      <div class="title-wrapper">
+        <h2 class="section-title" id="street">
+          🌯 Street &amp; Wraps
+        </h2>
+      </div>
+      <div class="menu-category">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Chicken Shawarma
+              </h3>
+              <p>
+                grilled chicken, garlic sauce, veggies in a soft wrap
+              </p>
+            </div>
+            <div class="price">
+              15,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Beef Shawarma
+              </h3>
+              <p>
+                seasoned beef slices with tahini sauce
+              </p>
+            </div>
+            <div class="price">
+              15,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Mixed Shawarma
+              </h3>
+              <p>
+                chicken &amp; beef combo for extra flavor
+              </p>
+            </div>
+            <div class="price">
+              18,000 UGX
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SIDES -->
+      <div class="title-wrapper">
+        <h2 class="section-title" id="sides">
+          🍟 Sides
+        </h2>
+      </div>
+      <div class="menu-category">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                French Fries
+              </h3>
+            </div>
+            <div class="price">
+              5,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Onion Rings
+              </h3>
+            </div>
+            <div class="price">
+              7,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Garlic Bread
+              </h3>
+            </div>
+            <div class="price">
+              5,000 UGX
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- DESSERTS -->
+      <div class="title-wrapper">
+        <h2 class="section-title" id="desserts">
+          🍰 Desserts
+        </h2>
+      </div>
+      <div class="menu-category">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Chocolate Cake
+              </h3>
+            </div>
+            <div class="price">
+              10,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Ice Cream Sundae
+              </h3>
+            </div>
+            <div class="price">
+              8,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Cheesecake
+              </h3>
+            </div>
+            <div class="price">
+              12,000 UGX
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- DRINKS -->
+      <div class="title-wrapper">
+        <h2 class="section-title" id="drinks">
+          🥤 Drinks
+        </h2>
+      </div>
+      <div class="menu-category">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Cocktails
+              </h3>
+            </div>
+            <div class="price">
+              15,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Fresh Juice
+              </h3>
+              <p>
+                Mango, Orange, Pineapple
+              </p>
+            </div>
+            <div class="price">
+              8,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Soft Drinks
+              </h3>
+            </div>
+            <div class="price">
+              3,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Milkshakes
+              </h3>
+            </div>
+            <div class="price">
+              10,000 UGX
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h3>
+                Coffee &amp; Tea
+              </h3>
+            </div>
+            <div class="price">
+              5,000 UGX
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- CONTACT SECTION -->
+      <div class="contact-section" id="contact">
+        <h3>
+          📞 Order Now
+        </h3>
+        <div class="phone-numbers">
+          📱
+          <a href="tel:+256790019942">          0790 019 942
+</a>
+          | 
+            📱
+          <a href="tel:+256730864527">          0730 864 527
+</a>
+        </div>
+        <a href="https://wa.me/256790019942?text=I%20want%20to%20order%20from%20Nayaad%20Restaurant%20at%20Hams%20Tower" class="whatsapp-btn" target="_blank">        💬 Order on WhatsApp
+</a>
+        <a href="https://wa.me/256730864527?text=I%20want%20to%20order%20from%20Nayaad%20Restaurant%20at%20Hams%20Tower" class="whatsapp-btn" style="background: #25D366; margin-left: 10px;" target="_blank">        💬 Second Line
+</a>
+        <p style="margin-top: 1rem;">
+          📍 Hams Tower Mall, Kampala Road (Opposite Bank of Uganda)
+        </p>
+      </div>
+      <!-- HOURS & INFO -->
+      <div class="info-grid">
+        <div class="info-card">
+          <h4>
+            ⏰ Opening Hours
+          </h4>
+          <ul class="hours-list">
+            <li>
+              Monday - Friday: 11:00 AM - 10:30 PM
+            </li>
+            <li>
+              Saturday: 10:00 AM - 11:00 PM
+            </li>
+            <li>
+              Sunday: 12:00 PM - 10:00 PM
+            </li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h4>
+            📍 Find Us
+          </h4>
+          <p>
+            <strong>            Hams Tower Mall
+</strong>
+          </p>
+          <p>
+            Kampala Road
+          </p>
+          <p>
+            Opposite Bank of Uganda
+          </p>
+          <p>
+            Next to Capital Shoppers
+          </p>
+          <p>
+            ✨ Dine In | Takeaway | Delivery ✨
+          </p>
+        </div>
+        <div class="info-card">
+          <h4>
+            ⭐ Why Choose Us
+          </h4>
+          <p>
+            ✔ Fresh ingredients daily
+          </p>
+          <p>
+            ✔ Best shawarma in town
+          </p>
+          <p>
+            ✔ Fast delivery
+          </p>
+          <p>
+            ✔ Prime location at Hams Tower
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>
+        © 2026 Nayaad Restaurant | Hams Tower Mall, Kampala Road, Uganda
+      </p>
+      <p>
+        📍 Opposite Bank of Uganda • Near Grand Mosque • Taxi Park area
+      </p>
+      <p>
+        📞 0790 019 942 / 0730 864 527
+      </p>
+    </div>
+  </body>
+</html>
